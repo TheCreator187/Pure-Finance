@@ -737,10 +737,17 @@ select.input-modern {
   .app-container { flex-direction: column; }
   .app-sidebar {
     width: 100%; max-width: none; border-right: none;
-    border-bottom: 1px solid var(--border); padding: 48px 24px;
+    border-bottom: 1px solid var(--border); padding: 32px 24px 24px;
   }
-  .app-main { padding: 24px; align-items: flex-start; }
-  .sidebar-logo img { margin-bottom: 40px; }
+  .app-main { padding: 16px; align-items: flex-start; }
+  .sidebar-logo img { margin-bottom: 24px; height: 60px; }
+  .sidebar-content h1 { font-size: 40px; margin-bottom: 16px; }
+  .sidebar-sub { margin-bottom: 24px; font-size: 16px; max-width: 100%; }
+  
+  /* Hide extra sidebar content to make the application immediately visible */
+  .sidebar-features { display: none; }
+  .sidebar-bottom { display: none; }
+
   .process-grid { flex-direction: column; }
   .process-arrow { transform: rotate(90deg); margin: 24px 0; }
   .glass-section { padding: 80px 16px; }
@@ -748,12 +755,35 @@ select.input-modern {
 }
 
 @media (max-width: 600px) {
-  .wizard-header { padding: 32px 24px 16px; }
-  .wizard-form { padding: 16px 24px 40px; }
-  .amount-options { grid-template-columns: 1fr; }
+  .wizard-wrapper { min-height: auto; }
+  .wizard-header { padding: 24px 20px 12px; }
+  .wizard-form { padding: 12px 20px 32px; }
+  
+  /* Keep amount options as a 2x2 grid instead of 4 rows to save vertical space */
+  .amount-options { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .radio-card .card-content { padding: 16px 12px; }
+  .radio-card .amt { font-size: 14px; }
+  
+  /* Form group spacing */
   .form-row { flex-direction: column; gap: 0; }
+  .form-group { margin-bottom: 16px; }
+  
+  /* Smaller inputs for mobile */
+  .input-modern { padding: 14px 16px; font-size: 15px; }
+  select.input-modern { background-position: right 16px center; }
+  
+  /* Smaller headings */
+  .step-headings { margin-bottom: 24px; }
+  .step-headings h2 { font-size: 24px; margin-bottom: 4px; }
+  .step-desc { font-size: 14px; }
+  
+  /* Full width buttons stacked */
+  .btn { padding: 14px 24px; font-size: 15px; width: 100%; justify-content: center; }
+  .wizard-footer { display: flex; flex-direction: column-reverse; gap: 12px; padding-top: 24px; }
+  .wizard-footer.space-between { flex-direction: column-reverse; gap: 12px; }
+
   .glass-section { padding: 60px 16px; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .glass-footer { padding: 40px 24px; }
-  .sidebar-content h1 { font-size: 40px; }
+  .sidebar-content h1 { font-size: 32px; }
 }
