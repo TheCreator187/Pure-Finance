@@ -3,515 +3,314 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pure Capital | Finance Solutions Built for Growth</title>
-  <meta name="description" content="Pure Capital provides smart, fast, and flexible financial solutions for businesses ready to grow. Access funding, credit lines, and capital management tools built for today's entrepreneurs." />
-  <meta property="og:title" content="Pure Capital | Finance Solutions Built for Growth" />
-  <meta property="og:description" content="Smart capital. Zero friction. Unlimited potential." />
+  <title>Pure Capital | Smart Business Funding</title>
+  <meta name="description" content="Apply for fast, flexible business funding in minutes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="app-mode">
 
-  <!-- ===== NAVIGATION ===== -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="assets/new-logo.png" alt="Pure Capital Logo" id="nav-logo-img" />
-      </a>
-      <nav class="nav-links" id="nav-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#stats">Why Pure Capital</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="nav-cta">
-        <a href="#apply" class="btn btn-outline">Sign In</a>
-        <a href="#apply" class="btn btn-primary">Get Funded</a>
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR: Branding -->
+    <aside class="app-sidebar">
+      <div class="sidebar-top">
+        <a href="#" class="sidebar-logo">
+          <img src="assets/ultimate-logo.png" alt="Pure Capital Logo" id="nav-logo-img" />
+        </a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-
-    <!-- Full-bleed image: positioned absolute, covers right 50% of viewport -->
-    <div class="hero-image-col">
-      <div class="hero-image-fade"></div>
-      <img
-        src="assets/hero-image.jpg"
-        alt="Business professional reviewing finance documents in a modern office"
-        class="hero-img"
-        loading="eager"
-      />
-      <div class="hero-float-card">
-        <div class="float-card-icon">⚡</div>
-        <div class="float-card-text">
-          <strong>Funds in 24 Hours</strong>
-          <span>Fast approval. No surprises.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Centered container holds the text column -->
-    <div class="container hero-container">
-      <div class="hero-text-col">
-        <div class="hero-badge">Trusted by 10,000+ Business Owners</div>
-        <h1 class="hero-headline">
-          Capital that moves<br /><span class="gradient-text">at your speed.</span>
-        </h1>
-        <p class="hero-sub">
-          Pure Capital delivers fast, flexible funding solutions designed for entrepreneurs who don't have time to wait. Apply in minutes. Funds in as little as 24 hours.
-        </p>
-        <div class="hero-actions">
-          <a href="#apply" class="btn btn-primary btn-large" id="hero-cta">Get Funded Today</a>
-          <a href="#how-it-works" class="btn btn-ghost btn-large">See How It Works →</a>
-        </div>
-        <div class="hero-stats-bar">
-          <div class="hero-stat">
-            <span class="stat-num">$2B+</span>
-            <span class="stat-label">Capital Deployed</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="hero-stat">
-            <span class="stat-num">10K+</span>
-            <span class="stat-label">Businesses Funded</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="hero-stat">
-            <span class="stat-num">24hr</span>
-            <span class="stat-label">Avg. Funding Time</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="hero-stat">
-            <span class="stat-num">A+</span>
-            <span class="stat-label">BBB Rating</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-bg-shape"></div>
-  </section>
-
-
-  <!-- ===== MARQUEE STRIP ===== -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Business Loans</span><span class="dot">●</span>
-      <span>Lines of Credit</span><span class="dot">●</span>
-      <span>Equipment Financing</span><span class="dot">●</span>
-      <span>SBA Loans</span><span class="dot">●</span>
-      <span>Revenue Advances</span><span class="dot">●</span>
-      <span>Invoice Factoring</span><span class="dot">●</span>
-      <span>Working Capital</span><span class="dot">●</span>
-      <span>Business Loans</span><span class="dot">●</span>
-      <span>Lines of Credit</span><span class="dot">●</span>
-      <span>Equipment Financing</span><span class="dot">●</span>
-      <span>SBA Loans</span><span class="dot">●</span>
-      <span>Revenue Advances</span><span class="dot">●</span>
-      <span>Invoice Factoring</span><span class="dot">●</span>
-      <span>Working Capital</span><span class="dot">●</span>
-    </div>
-  </div>
-
-  <!-- ===== SOLUTIONS ===== -->
-  <section class="solutions section-pad" id="solutions">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Our Products</p>
-        <h2 class="section-title">Funding options built to work for you.</h2>
-        <p class="section-desc">Whether you need a quick cash injection or a long-term credit facility, Pure Capital has the right solution for your business.</p>
-      </div>
-      <div class="cards-grid">
-
-        <div class="card card-featured">
-          <div class="card-icon">💳</div>
-          <h3>Line of Credit</h3>
-          <p>A revolving credit line you can draw from anytime. Pay back what you use, then draw again.</p>
-          <ul class="card-list">
-            <li>Credit limits from $10K – $500K</li>
-            <li>Flexible 12, 18, or 24-month terms</li>
-            <li>Draw funds in seconds, 24/7</li>
-          </ul>
-          <a href="#apply" class="btn btn-primary">Learn More</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🏦</div>
-          <h3>Term Loan</h3>
-          <p>A lump sum of capital up front — ideal for larger investments in your business.</p>
-          <ul class="card-list">
-            <li>Loan amounts from $5K – $1M</li>
-            <li>Repayment terms up to 36 months</li>
-            <li>Fixed, predictable payments</li>
-          </ul>
-          <a href="#apply" class="btn btn-outline">Learn More</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">⚙️</div>
-          <h3>Equipment Financing</h3>
-          <p>Finance the tools and equipment that power your business without draining your cash reserves.</p>
-          <ul class="card-list">
-            <li>Up to 100% equipment cost covered</li>
-            <li>Terms matched to equipment life</li>
-            <li>Preserve working capital</li>
-          </ul>
-          <a href="#apply" class="btn btn-outline">Learn More</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📈</div>
-          <h3>Revenue Advance</h3>
-          <p>Get capital now based on your future revenue. Fast approval with minimal paperwork.</p>
-          <ul class="card-list">
-            <li>Advance from $2K – $250K</li>
-            <li>Repay as a % of daily revenue</li>
-            <li>No fixed monthly payments</li>
-          </ul>
-          <a href="#apply" class="btn btn-outline">Learn More</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-section section-pad" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Quick & Simple</p>
-        <h2 class="section-title">Funding that moves at your speed.</h2>
-        <p class="section-desc">Our streamlined process gets you from application to funded faster than any traditional lender.</p>
-      </div>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-number">01</div>
-          <h3>Apply in Minutes</h3>
-          <p>Complete our quick online application. No lengthy paperwork or in-person visits required.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <h3>Get a Decision</h3>
-          <p>Receive a funding decision in as little as a few hours. Our smart underwriting is fast and fair.</p>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <h3>Access Your Funds</h3>
-          <p>Once approved, funds can be in your account as soon as the next business day.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== STATS ===== -->
-  <section class="stats-section section-pad" id="stats">
-    <div class="container">
-      <div class="stats-content">
-        <div class="stats-left">
-          <p class="section-label">Why Pure Capital</p>
-          <h2 class="section-title">Built on trust.<br />Proven by results.</h2>
-          <p class="section-desc">We're not just a lender — we're a capital partner dedicated to the long-term success of your business.</p>
-          <a href="#apply" class="btn btn-primary">Start Your Application</a>
-        </div>
-        <div class="stats-right">
-          <div class="stat-card">
-            <span class="big-stat">$2B+</span>
-            <span class="stat-card-label">Total Capital Deployed to American businesses</span>
-          </div>
-          <div class="stat-card">
-            <span class="big-stat">10,000+</span>
-            <span class="stat-card-label">Small businesses funded since founding</span>
-          </div>
-          <div class="stat-card">
-            <span class="big-stat">97%</span>
-            <span class="stat-card-label">Customer satisfaction rate from funded clients</span>
-          </div>
-          <div class="stat-card">
-            <span class="big-stat">24hrs</span>
-            <span class="stat-card-label">Average time from approval to funded account</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== REQUIREMENTS ===== -->
-  <section class="requirements section-pad" id="requirements">
-    <div class="container">
-      <div class="requirements-inner">
-        <div class="req-text">
-          <p class="section-label">Qualify Today</p>
-          <h2 class="section-title">Are we a match?<br />Check our minimum requirements.</h2>
-          <p class="section-desc">We believe more businesses deserve access to capital. Our qualification criteria are designed to be inclusive and realistic.</p>
-          <a href="#apply" class="btn btn-primary">Check My Eligibility</a>
-        </div>
-        <div class="req-checklist">
-          <div class="req-item">
-            <div class="req-icon">✓</div>
-            <div>
-              <strong>1+ Year in Business</strong>
-              <p>Your business should have been operating for at least 12 months.</p>
+      
+      <div class="sidebar-content">
+        <h1>Fast. Simple.<br /><span class="gradient-text">Business Funding.</span></h1>
+        <p class="sidebar-sub">Get the capital you need to grow without the traditional banking friction. Apply in minutes and get funded as soon as tomorrow.</p>
+        
+        <div class="sidebar-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <div class="feature-text">
+              <strong>Decisions in hours</strong>
+              <span>Not days or weeks</span>
             </div>
           </div>
-          <div class="req-item">
-            <div class="req-icon">✓</div>
-            <div>
-              <strong>$100K+ Annual Revenue</strong>
-              <p>We look at revenue, not just credit scores, to evaluate your eligibility.</p>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <div class="feature-text">
+              <strong>Bank-level security</strong>
+              <span>Your data is encrypted and safe</span>
             </div>
           </div>
-          <div class="req-item">
-            <div class="req-icon">✓</div>
-            <div>
-              <strong>600+ Personal Credit Score</strong>
-              <p>A minimum credit score helps us ensure responsible lending to both parties.</p>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
             </div>
-          </div>
-          <div class="req-item">
-            <div class="req-icon">✓</div>
-            <div>
-              <strong>U.S.-Based Business</strong>
-              <p>We currently serve businesses operating within the United States.</p>
+            <div class="feature-text">
+              <strong>Built for growth</strong>
+              <span>Funding tailored to your needs</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials section-pad" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Real Stories</p>
-        <h2 class="section-title">Trusted by thousands of business owners like you.</h2>
+      
+      <div class="sidebar-bottom">
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <span>BBB A+ Rated</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Bank-Level Security</span>
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>4.9/5 Trustpilot</span>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Pure Capital Financial Solutions</p>
       </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Pure Capital helped me expand my restaurant when no bank would even call me back. The process was fast, professional, and completely transparent."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MJ</div>
-            <div>
-              <strong>Marcus Johnson</strong>
-              <span>CEO, Golden Plate Restaurants</span>
+    </aside>
+
+    <!-- RIGHT MAIN: Wizard Form -->
+    <main class="app-main">
+      <div class="wizard-wrapper">
+        
+        <div class="wizard-header" id="wizard-header">
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar" style="width: 33.33%;"></div>
+          </div>
+          <p class="step-indicator" id="step-indicator">Step 1 of 3</p>
+        </div>
+
+        <form id="loan-application" class="wizard-form" onsubmit="handleWizardSubmit(event)">
+          
+          <!-- STEP 1: Funding Needs -->
+          <div class="wizard-step active" id="step-1">
+            <div class="step-headings">
+              <h2>How much capital do you need?</h2>
+              <p class="step-desc">Select an estimated amount to get started.</p>
+            </div>
+            
+            <div class="amount-options">
+              <label class="radio-card">
+                <input type="radio" name="funding_amount" value="10k-50k" required />
+                <div class="card-content">
+                  <span class="amt">$10k - $50k</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="funding_amount" value="50k-100k" />
+                <div class="card-content">
+                  <span class="amt">$50k - $100k</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="funding_amount" value="100k-250k" />
+                <div class="card-content">
+                  <span class="amt">$100k - $250k</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="funding_amount" value="250k+" />
+                <div class="card-content">
+                  <span class="amt">$250k+</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="form-group mt-4">
+              <label for="funding_purpose">What is the primary purpose of the funds?</label>
+              <select id="funding_purpose" name="funding_purpose" required class="input-modern">
+                <option value="" disabled selected>Select a purpose...</option>
+                <option value="Working Capital">Working Capital</option>
+                <option value="Equipment Purchase">Equipment Purchase</option>
+                <option value="Expansion">Expansion / New Location</option>
+                <option value="Inventory">Inventory</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="wizard-footer">
+              <button type="button" class="btn btn-primary btn-next" onclick="nextStep(2)">Continue →</button>
             </div>
           </div>
-        </div>
-        <div class="testimonial-card testimonial-featured">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"I needed equipment financing fast. Pure Capital had money in my account within 48 hours. No hassle. This is what business banking should feel like."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">ST</div>
-            <div>
-              <strong>Sarah Thompson</strong>
-              <span>Owner, Thompson Auto Body</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"The line of credit has been a game changer for managing seasonal cash flow. I draw when I need it and pay it back when business picks up."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">DR</div>
-            <div>
-              <strong>David Rivera</strong>
-              <span>Founder, Rivera Construction</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq-section section-pad" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Common Questions</p>
-        <h2 class="section-title">We're fluent in small business — and ready to answer your questions.</h2>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-item" id="faq-1">
-          <button class="faq-q" onclick="toggleFaq('faq-1')">
-            How long does the application take?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>Most applicants complete the application in under 10 minutes. We only ask for the essential information needed to make a fast, fair decision.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-2">
-          <button class="faq-q" onclick="toggleFaq('faq-2')">
-            Will applying affect my credit score?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>Our initial check is a soft pull and will not affect your credit score. A hard pull only occurs if you accept a loan offer and proceed to funding.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-3">
-          <button class="faq-q" onclick="toggleFaq('faq-3')">
-            How quickly can I receive funds?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>In many cases, funds can be deposited into your account the same day you're approved or by the next business day. Average funding time is under 24 hours.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-4">
-          <button class="faq-q" onclick="toggleFaq('faq-4')">
-            What types of businesses do you fund?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>We work with a wide range of industries including retail, restaurants, construction, healthcare, e-commerce, and many more. If you're a U.S.-based business, we want to hear from you.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-5">
-          <button class="faq-q" onclick="toggleFaq('faq-5')">
-            Are there prepayment penalties?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>No hidden fees or prepayment penalties. Pay off your balance early and save on interest — we actually encourage it.</p>
-          </div>
-        </div>
-        <div class="faq-item" id="faq-6">
-          <button class="faq-q" onclick="toggleFaq('faq-6')">
-            Can I apply with bad credit?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>We look at your overall business health — not just your credit score. Revenue, time in business, and cash flow are all major factors in our decision.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <!-- STEP 2: Business Info -->
+          <div class="wizard-step" id="step-2">
+            <div class="step-headings">
+              <h2>Tell us about your business</h2>
+              <p class="step-desc">This helps us match you with the right capital product.</p>
+            </div>
 
-  <!-- ===== APPLY CTA ===== -->
-  <section class="apply-cta section-pad" id="apply">
-    <div class="container">
-      <div class="cta-inner">
-        <div class="cta-logo">
-          <img src="assets/new-logo.png" alt="Pure Capital" />
-        </div>
-        <h2>Ready to take your business to the next level?</h2>
-        <p>Join thousands of entrepreneurs who have trusted Pure Capital to fuel their growth. Apply today — no obligation, no hard pull.</p>
-        <form class="apply-form" id="apply-form" onsubmit="handleApply(event)">
-          <div class="form-row">
             <div class="form-group">
-              <label for="biz-name">Business Name</label>
-              <input type="text" id="biz-name" placeholder="Your Business Name" required />
+              <label for="business_name">Legal Business Name</label>
+              <input type="text" id="business_name" name="business_name" class="input-modern" placeholder="e.g. Acme Corp LLC" required />
             </div>
-            <div class="form-group">
-              <label for="owner-name">Owner Name</label>
-              <input type="text" id="owner-name" placeholder="Full Name" required />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="time_in_business">Time in Business</label>
+                <select id="time_in_business" name="time_in_business" class="input-modern" required>
+                  <option value="" disabled selected>Select...</option>
+                  <option value="Less than 1 year">Less than 1 year</option>
+                  <option value="1-3 years">1 - 3 years</option>
+                  <option value="3-5 years">3 - 5 years</option>
+                  <option value="5+ years">5+ years</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="annual_revenue">Annual Revenue</label>
+                <select id="annual_revenue" name="annual_revenue" class="input-modern" required>
+                  <option value="" disabled selected>Select...</option>
+                  <option value="Under $100k">Under $100k</option>
+                  <option value="$100k - $500k">$100k - $500k</option>
+                  <option value="$500k - $1M">$500k - $1M</option>
+                  <option value="$1M+">$1M+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-footer space-between">
+              <button type="button" class="btn btn-ghost" onclick="prevStep(1)">← Back</button>
+              <button type="button" class="btn btn-primary btn-next" onclick="nextStep(3)">Continue →</button>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="you@business.com" required />
+
+          <!-- STEP 3: Contact Info -->
+          <div class="wizard-step" id="step-3">
+            <div class="step-headings">
+              <h2>Your Contact Details</h2>
+              <p class="step-desc">Where should we send your funding decision?</p>
             </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" class="input-modern" placeholder="First" required />
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" class="input-modern" placeholder="Last" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" class="input-modern" placeholder="you@company.com" required />
+            </div>
+
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" placeholder="(555) 000-0000" required />
+              <input type="tel" id="phone" name="phone" class="input-modern" placeholder="(555) 000-0000" required />
             </div>
+
+            <!-- Email target input (hidden by default, can be populated via JS or manually) -->
+            <input type="hidden" id="target_email" name="target_email" value="applications@purecapital.com" />
+
+            <div class="wizard-footer space-between">
+              <button type="button" class="btn btn-ghost" onclick="prevStep(2)">← Back</button>
+              <button type="submit" class="btn btn-primary btn-next" id="submit-btn">Submit Application 🚀</button>
+            </div>
+            
+            <p class="form-disclaimer mt-4">By submitting, you agree to our Terms of Service and Privacy Policy. Checking eligibility will not affect your credit score.</p>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="amount">Funding Amount Needed</label>
-              <select id="amount" required>
-                <option value="">Select Amount</option>
-                <option>$5,000 – $25,000</option>
-                <option>$25,000 – $100,000</option>
-                <option>$100,000 – $250,000</option>
-                <option>$250,000 – $500,000</option>
-                <option>$500,000+</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="product">Funding Type</label>
-              <select id="product" required>
-                <option value="">Select Type</option>
-                <option>Line of Credit</option>
-                <option>Term Loan</option>
-                <option>Equipment Financing</option>
-                <option>Revenue Advance</option>
-              </select>
-            </div>
+
+          <!-- STEP 4: Success -->
+          <div class="wizard-step success-step" id="step-4">
+            <div class="success-icon-large">✓</div>
+            <h2>Application Received!</h2>
+            <p class="step-desc">Thank you for applying. A Pure Capital advisor will review your request and reach out to you via email shortly.</p>
+            <a href="#" class="btn btn-outline mt-4" onclick="location.reload()">Return Home</a>
           </div>
-          <button type="submit" class="btn btn-primary btn-large btn-full">Submit Application →</button>
-          <p class="form-disclaimer">By submitting, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. Checking eligibility will not affect your credit score.</p>
+
         </form>
-        <div class="apply-success" id="apply-success" style="display:none;">
-          <div class="success-icon">✓</div>
-          <h3>Application Received!</h3>
-          <p>A Pure Capital advisor will reach out within 1 business hour. Check your email for next steps.</p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- PROCESS SECTION -->
+  <section class="glass-section process-section" id="process">
+    <div class="glass-container">
+      <div class="section-header-glass">
+        <h2>Funding at the speed of business.</h2>
+        <p>Our technology-driven process removes the friction from traditional lending.</p>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-icon">1</div>
+          <h3>Apply Online</h3>
+          <p>Complete our secure 3-minute virtual application. No heavy paperwork required.</p>
+          <span class="process-time">~3 Minutes</span>
+        </div>
+        <div class="process-arrow">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+        <div class="process-card reveal delay-1">
+          <div class="process-icon">2</div>
+          <h3>Get Approved</h3>
+          <p>Our automated underwriting system reviews your profile instantly.</p>
+          <span class="process-time">Within Hours</span>
+        </div>
+        <div class="process-arrow">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </div>
+        <div class="process-card reveal delay-2">
+          <div class="process-icon">3</div>
+          <h3>Access Capital</h3>
+          <p>Once approved, funds are wired directly into your business checking account.</p>
+          <span class="process-time">Next Business Day</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/new-logo.png" alt="Pure Capital" class="footer-logo" />
-        <p>Smart capital. Zero friction.<br />Unlimited potential.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="Facebook">f</a>
-        </div>
+  <!-- TESTIMONIALS SECTION -->
+  <section class="glass-section testimonial-section" id="testimonials">
+    <div class="glass-container">
+      <div class="section-header-glass">
+        <h2>Trusted by top founders.</h2>
+        <p>Don't just take our word for it. Here's what business owners say about Pure Capital.</p>
       </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Products</h4>
-          <a href="#">Line of Credit</a>
-          <a href="#">Term Loan</a>
-          <a href="#">Equipment Financing</a>
-          <a href="#">Revenue Advance</a>
+
+      <div class="testimonial-grid">
+        <div class="glass-card testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Pure Capital stepped in when our traditional bank moved too slow. We secured the equipment we needed and doubled our output within a month."</p>
+          <div class="author">
+            <strong>Sarah Jenkins</strong>
+            <span>CEO, Ascend Manufacturing</span>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="#">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-          <a href="#">Blog</a>
+        <div class="glass-card testimonial-card reveal delay-1">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The application process was unbelievably smooth. No stacks of tax returns, just a smart digital connection and we had funds the next day."</p>
+          <div class="author">
+            <strong>David Chen</strong>
+            <span>Founder, TechNova Solutions</span>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <a href="#">Contact Us</a>
-          <a href="#">FAQ</a>
-          <a href="#">Customer Portal</a>
-          <a href="#">Rates & Terms</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Accessibility</a>
-          <a href="#">Disclosures</a>
+        <div class="glass-card testimonial-card reveal delay-2">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"This is exactly how business finance should work. Fast, transparent, and built for companies that are actually growing."</p>
+          <div class="author">
+            <strong>Marcus Thorne</strong>
+            <span>Owner, The Daily Roast</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2026 Pure Capital Financial Solutions, LLC. All Rights Reserved. | Loans subject to lender approval. Not available in all states. Pure Capital is not a bank. Funding provided by licensed lending partners.</p>
-      </div>
-    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="glass-footer">
+    <p>© 2026 Pure Capital Financial Solutions. All rights reserved.</p>
   </footer>
 
   <script src="main.js"></script>

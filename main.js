@@ -1,183 +1,196 @@
-/* ===== PURE CAPITAL — MAIN.JS ===== */
+/* ===== PURE CAPITAL — APP WIZARD JS ===== */
 
-// ===== NAVBAR SCROLL EFFECT =====
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
+// Total number of steps in the wizard (excluding success step)
+const TOTAL_STEPS = 3;
 
-// ===== MOBILE HAMBURGER MENU =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
+/**
+ * Validates the current step before allowing navigation to the next step.
+ */
+function validateStep(stepNumber) {
+  const stepEl = document.getElementById(`step-${stepNumber}`);
+  if (!stepEl) return false;
 
-hamburger.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('mobile-open');
-  hamburger.classList.toggle('active', isOpen);
-  hamburger.setAttribute('aria-expanded', isOpen);
-});
+  const inputs = stepEl.querySelectorAll('input[required], select[required], textarea[required]');
+  let isValid = true;
 
-// Close menu when a nav link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('mobile-open');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', false);
-  });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target) && navLinks.classList.contains('mobile-open')) {
-    navLinks.classList.remove('mobile-open');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', false);
-  }
-});
-
-// ===== FAQ ACCORDION =====
-function toggleFaq(id) {
-  const item = document.getElementById(id);
-  if (!item) return;
-  
-  const isOpen = item.classList.contains('open');
-  
-  // Close all open items
-  document.querySelectorAll('.faq-item.open').forEach(el => {
-    el.classList.remove('open');
-  });
-  
-  // Open clicked item if it was closed
-  if (!isOpen) {
-    item.classList.add('open');
-  }
-}
-
-// ===== APPLY FORM HANDLER =====
-function handleApply(e) {
-  e.preventDefault();
-  const form = document.getElementById('apply-form');
-  const success = document.getElementById('apply-success');
-  
-  // Simple fade out / fade in
-  form.style.opacity = '0';
-  form.style.transform = 'translateY(8px)';
-  form.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-  
-  setTimeout(() => {
-    form.style.display = 'none';
-    success.style.display = 'block';
-    success.style.opacity = '0';
-    success.style.transform = 'translateY(8px)';
-    success.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  // Clear previous error styles
+  inputs.forEach(input => {
+    input.style.borderColor = '';
     
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        success.style.opacity = '1';
-        success.style.transform = 'none';
-      });
-    });
-  }, 300);
-}
-
-// ===== SCROLL REVEAL ANIMATION =====
-const revealElements = document.querySelectorAll(
-  '.card, .step, .stat-card, .req-item, .testimonial-card, .faq-item, .hero-stats-bar'
-);
-
-revealElements.forEach((el, i) => {
-  el.classList.add('reveal');
-  // Stagger sibling elements
-  const siblings = el.parentElement ? el.parentElement.children : [];
-  const idx = Array.from(siblings).indexOf(el);
-  if (idx > 0 && idx <= 4) {
-    el.classList.add(`reveal-delay-${idx}`);
-  }
-});
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-revealElements.forEach(el => revealObserver.observe(el));
-
-// ===== SMOOTH NAV LINK HIGHLIGHTING =====
-const sections = document.querySelectorAll('section[id]');
-const navLinkElems = document.querySelectorAll('.nav-links a');
-
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinkElems.forEach(link => {
-        link.style.color = '';
-        if (link.getAttribute('href') === `#${id}`) {
-          link.style.color = 'var(--text-primary)';
-        }
-      });
-    }
-  });
-}, { threshold: 0.4 });
-
-sections.forEach(s => sectionObserver.observe(s));
-
-// ===== ANIMATED STAT COUNTER =====
-function animateCounter(el, target, duration = 1800) {
-  const isDecimal = target.toString().includes('.');
-  const start = 0;
-  const startTime = performance.now();
-  
-  function update(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
-    const value = start + (target - start) * eased;
-    
-    el.textContent = isDecimal
-      ? value.toFixed(1)
-      : Math.round(value).toLocaleString();
-    
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  
-  requestAnimationFrame(update);
-}
-
-// Observe stat numbers for counter animation
-const statNumbers = document.querySelectorAll('.stat-num');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const text = el.textContent;
+    // Check validity
+    if (!input.checkValidity()) {
+      isValid = false;
+      input.style.borderColor = '#ef4444'; // Red border for error
       
-      // Extract numeric value
-      const match = text.match(/[\d.]+/);
-      if (match) {
-        const num = parseFloat(match[0]);
-        const prefix = text.split(match[0])[0];
-        const suffix = text.slice(text.indexOf(match[0]) + match[0].length);
-        
-        animateCounter({ 
-          set textContent(v) { el.textContent = prefix + v + suffix; }
-        }, num);
+      // Add a shake animation to the first invalid input
+      if (isValid === false && input === inputs[0]) {
+        input.classList.add('error-shake');
+        setTimeout(() => input.classList.remove('error-shake'), 400);
       }
-      
-      counterObserver.unobserve(el);
     }
   });
-}, { threshold: 0.5 });
 
-statNumbers.forEach(el => counterObserver.observe(el));
+  // Special check for radio buttons (Funding amount)
+  const radios = stepEl.querySelectorAll('input[type="radio"][required]');
+  if (radios.length > 0) {
+    const radioName = radios[0].name;
+    const isRadioChecked = stepEl.querySelector(`input[name="${radioName}"]:checked`);
+    if (!isRadioChecked) {
+      isValid = false;
+      const radioContainer = radios[0].closest('.amount-options');
+      if (radioContainer) {
+        radioContainer.style.border = '1px solid #ef4444';
+        radioContainer.style.padding = '8px';
+        radioContainer.style.borderRadius = 'var(--radius-lg)';
+        setTimeout(() => {
+          radioContainer.style.border = '';
+          radioContainer.style.padding = '';
+        }, 2000);
+      }
+    }
+  }
 
-// ===== CONSOLE BRANDING =====
-console.log('%c Pure Capital ', 'background: #1849D6; color: white; padding: 6px 14px; border-radius: 6px; font-size: 14px; font-weight: bold;');
-console.log('%c Finance Solutions Built for Growth ', 'color: #4A5568; font-size: 12px;');
+  return isValid;
+}
+
+/**
+ * Navigates to the next step if validation passes.
+ */
+function nextStep(nextStepNumber) {
+  const currentStepNumber = nextStepNumber - 1;
+  
+  if (!validateStep(currentStepNumber)) {
+    // Optionally alert the user or let the red borders do the talking
+    return;
+  }
+
+  goToStep(nextStepNumber);
+}
+
+/**
+ * Navigates to the previous step.
+ */
+function prevStep(prevStepNumber) {
+  goToStep(prevStepNumber);
+}
+
+/**
+ * Handles DOM updates to show the requested step.
+ */
+function goToStep(stepNumber) {
+  // Hide all steps
+  document.querySelectorAll('.wizard-step').forEach(step => {
+    step.classList.remove('active');
+  });
+
+  // Show the target step
+  const targetStep = document.getElementById(`step-${stepNumber}`);
+  if (targetStep) {
+    targetStep.classList.add('active');
+  }
+
+  // Update progress bar & text (if not success step)
+  if (stepNumber <= TOTAL_STEPS) {
+    const progressPercent = (stepNumber / TOTAL_STEPS) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${progressPercent}%`;
+    }
+
+    const stepIndicator = document.getElementById('step-indicator');
+    if (stepIndicator) {
+      stepIndicator.textContent = `Step ${stepNumber} of ${TOTAL_STEPS}`;
+    }
+    
+    // Ensure header is visible
+    document.getElementById('wizard-header').style.display = 'block';
+  } else {
+    // Hide progress header on success step
+    document.getElementById('wizard-header').style.display = 'none';
+  }
+}
+
+/**
+ * Handles the final form submission.
+ */
+function handleWizardSubmit(e) {
+  e.preventDefault();
+  
+  // Validate final step
+  if (!validateStep(TOTAL_STEPS)) return;
+
+  const form = document.getElementById('loan-application');
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  // Show processing state on button
+  const submitBtn = document.getElementById('submit-btn');
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = 'Processing...';
+  submitBtn.disabled = true;
+
+  // SIMULATED API CALL OR MAILTO LOGIC
+  setTimeout(() => {
+    console.log('Form Data Submitted:', data);
+    
+    // To implement the email requirement:
+    // Option A: API integration (like Formspree, EmailJS, Zapier)
+    // fetch('https://api.yourmailer.com/submit', {
+    //   method: 'POST',
+    //   body: JSON.stringify(data),
+    //   headers: { 'Content-Type': 'application/json' }
+    // });
+    
+    // Option B: Mailto fallback
+    // const subject = encodeURIComponent(`New Loan Application - ${data.business_name}`);
+    // const body = encodeURIComponent(
+    //   `Name: ${data.first_name} ${data.last_name}\n` +
+    //   `Business: ${data.business_name}\n` +
+    //   `Email: ${data.email}\n` +
+    //   `Phone: ${data.phone}\n` +
+    //   `Amount Needed: ${data.funding_amount}\n` +
+    //   `Purpose: ${data.funding_purpose}\n` +
+    //   `Time in Biz: ${data.time_in_business}\n` +
+    //   `Revenue: ${data.annual_revenue}`
+    // );
+    // window.location.href = `mailto:${data.target_email}?subject=${subject}&body=${body}`;
+
+    // Move to success step
+    goToStep(TOTAL_STEPS + 1);
+  }, 1200);
+}
+
+// Add a quick shake animation class via JS if not in CSS
+document.head.insertAdjacentHTML('beforeend', `
+  <style>
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+    .error-shake {
+      animation: shake 0.4s ease-in-out;
+    }
+  </style>
+`);
+
+// ===== SCROLL REVEAL ANIMATIONS =====
+document.addEventListener('DOMContentLoaded', () => {
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+});
