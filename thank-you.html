@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Received | Pure Capital</title>
+  <meta name="description" content="Your business funding application has been received by Pure Capital US LLC." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://purecapital.us/thank-you.html" />
+  <meta name="author" content="Pure Capital US LLC" />
+  <meta name="theme-color" content="#0c1a2e" />
+  <link rel="icon" href="https://purecapital.us/assets/IMG_20260531_000449-removebg-preview.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://purecapital.us/assets/IMG_20260531_000449-removebg-preview.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pure Capital" />
+  <meta property="og:title" content="Application Received | Pure Capital" />
+  <meta property="og:description" content="Your business funding application has been received by Pure Capital US LLC." />
+  <meta property="og:url" content="https://purecapital.us/thank-you.html" />
+  <meta property="og:image" content="https://purecapital.us/assets/banner.jpg" />
+  <meta property="og:image:alt" content="Pure Capital business funding" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Application Received | Pure Capital" />
+  <meta name="twitter:description" content="Your business funding application has been received by Pure Capital US LLC." />
+  <meta name="twitter:image" content="https://purecapital.us/assets/banner.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="assets/IMG_20260531_000449-removebg-preview.png" alt="Pure Capital US LLC — business funding" width="180" height="52" />
+      </a>
+    </div>
+  </header>
+
+  <section class="thank-you-page">
+    <div class="thank-you-content">
+      <div class="thank-you-icon" aria-hidden="true">✓</div>
+      <h1 id="thank-you-title">Thank You — We've Received Your Application</h1>
+      <p id="thank-you-message">A Pure Capital funding specialist will review your information and contact you within one business day. If you need immediate assistance, please call us at <a href="tel:+13472012166"><strong>(347) 201-2166</strong></a>.</p>
+      <a href="index.html" class="btn btn-primary btn-lg">Return to Homepage</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2026 Pure Capital. All rights reserved. purecapital.us</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('type') === 'prequalify') {
+        document.title = 'Prequalification Received | Pure Capital';
+        const title = document.getElementById('thank-you-title');
+        const msg = document.getElementById('thank-you-message');
+        if (title) title.textContent = "Thank You — We've Received Your Prequalification";
+        if (msg) msg.innerHTML = 'Your prequalification documents and information have been received. A Pure Capital funding specialist will review your submission and contact you within one business day. If you need immediate assistance, please call us at <a href="tel:+13472012166"><strong>(347) 201-2166</strong></a>.';
+      }
+    })();
+  </script>
+</body>
+</html>

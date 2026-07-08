@@ -1,0 +1,2 @@
+# Deny all web access to uploaded files
+Require all denied

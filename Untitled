@@ -1,0 +1,1 @@
+python3 generate_prequalify_html.py && python3 inject_seo.py
